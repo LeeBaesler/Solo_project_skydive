@@ -61,6 +61,7 @@ return (
           </div>
         </div>
       </div>
+      <SkydiveForm />
       </section>
 )
 

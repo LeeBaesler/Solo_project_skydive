@@ -9,38 +9,26 @@ import { takeEvery, put } from 'redux-saga/effects';
 import axios from 'axios';
 import App from './components/App/App';
 
-function* rootSaga(){
-  yield takeEvery("ADD_LOG", addLog);
-}
 
-function* addLog (action) {
-  try {
-    yield axios.post('/api/logbook', action.payload);
-    yield put ({type: "FETCH_LOG" });
-  }catch (error) {
-    console.log('Error POSTING log', error)
-  }
-}
+// const sagaMiddleware = createSagaMiddleware();
 
-const sagaMiddleware = createSagaMiddleware();
+// const logbookReducer = (state = {}, action) => {
+//   switch (action.type) {
+//     case 'SET_LOG':
+//       return action.payload
+//     default:
+//       return state;
+//   }
+// }
 
-const logbookReducer = (state = {}, action) => {
-  switch (action.type) {
-    case 'SET_LOG':
-      return action.payload
-    default:
-      return state;
-  }
-}
+// const storeInstance = createStore(
+//   combineReducers({
+//     logbookReducer,
+//   }),
+//   applyMiddleware(sagaMiddleware, logger),
+// );
 
-const storeInstance = createStore(
-  combineReducers({
-    logbookReducer,
-  }),
-  applyMiddleware(sagaMiddleware, logger),
-);
-
-sagaMiddleware.run(rootSaga);
+// sagaMiddleware.run(rootSaga);
 
 ReactDOM.render(
   <Provider store={store}>
