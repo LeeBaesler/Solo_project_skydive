@@ -1,5 +1,5 @@
 import React from 'react';
-import LogbookDetails from '../JumperDetails/JumperDetails';
+import LogbookDetails from './JumperDetails';
 
 // This is one of our simplest components
 // It doesn't have local state
