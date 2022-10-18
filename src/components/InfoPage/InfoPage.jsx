@@ -1,4 +1,5 @@
 import React from 'react';
+import LogbookDetails from '../JumperDetails/JumperDetails';
 
 // This is one of our simplest components
 // It doesn't have local state
@@ -7,9 +8,12 @@ import React from 'react';
 
 function InfoPage() {
   return (
+    <>
     <div className="container">
       <p>Info Page</p>
     </div>
+    <LogbookDetails />
+    </>
   );
 }
 
