@@ -1,7 +1,17 @@
 import { put, takeEvery } from 'redux-saga/effects';
 import axios from 'axios';
 
-// worker Saga: will be fired on "LOGOUT" actions
+
+function* fetchAllLogs(){
+  try {
+    const logbook=yield axios.get('/api/logbook');
+    console.log('GET logs', logbook.data);
+    yield put ({type: 'FETCH_LOG'})
+  }catch{
+    console.log("GET logs error")
+  }
+}
+
 function* addLog(action) {
   try {
     yield axios.post('/api/logbook', action.payload);
@@ -13,6 +23,7 @@ function* addLog(action) {
 
 function* logSaga() {
   yield takeEvery('ADD_LOG', addLog);
+  yield takeEvery('GET_LOG', fetchAllLogs);
 }
 
 export default logSaga;
