@@ -25,7 +25,9 @@ function SkydiveForm(props) {
 
         dispatch({
             type: 'ADD_LOG',
-            
+            payload: {jump_number: jumpNumber, date: date, place: place, aircraft: aircraft,
+                    equipment: equipment, altitude: altitude, freefall: freefall, total_freefall: totalFreeFall,
+                    description: description, image: image, video: video}
         })
     }
 }
