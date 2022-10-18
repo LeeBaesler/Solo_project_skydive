@@ -15,7 +15,7 @@ add or change your SERVER_SESSION_SECRET environment variable!
 
 ----------------------------`;
 
-const exampleBadSecret = 'superDuperSecret';
+const exampleBadSecret = "25POUbVtx6RKVNWszd9ERB9Bb6"
 
 module.exports = {
   badSecret,
