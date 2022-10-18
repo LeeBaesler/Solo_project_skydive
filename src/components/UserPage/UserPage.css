@@ -1,0 +1,4 @@
+.apiData{
+    display: flex;
+    flex-direction: column;
+}

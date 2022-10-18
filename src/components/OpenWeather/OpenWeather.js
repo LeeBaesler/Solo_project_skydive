@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import axios from 'axios';
-import './UserPage.css';
+import axios from 'axios'
 
 
 function OpenWeather() {
@@ -19,7 +18,7 @@ function OpenWeather() {
   }
 
 return (
-  <section className="apiData">
+  <section>
       <div className="search">
         <input 
         value={location}
