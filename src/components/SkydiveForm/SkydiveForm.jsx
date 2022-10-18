@@ -38,6 +38,7 @@ function SkydiveForm(props) {
             <form onSubmit={handleSubmit} className='addLog'>
                 <input 
                 required
+                type="number"
                 placeholder="Jump Number"
                 value={jumpNumber}
                 onChange={(event)=> setJumpNumber(event.target.value)}
@@ -68,18 +69,21 @@ function SkydiveForm(props) {
                 />
                 <input 
                 required 
+                type="number"
                 placeholder="Altitude"
                 value={altitude}
                 onChange={(event)=> setAltitude(event.target.value)}
                 />
                 <input 
                 required 
+                type="number"
                 placeholder="Freefall"
                 value={freefall}
                 onChange={(event)=> setFreefall(event.target.value)}
                 />
                 <input 
                 required 
+                type="number"
                 placeholder="Total Freefall"
                 value={totalFreefall}
                 onChange={(event)=> setTotalFreefall(event.target.value)}
