@@ -22,11 +22,11 @@ router.post('/', (req, res) => {
 
     let queryText = `INSERT INTO "log_book" ("jump_number", "date", "place", 
                     "aircraft", "equipment", "altitude", "freefall", "total_freefall", 
-                    "description", "image", "video") 
-                    VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11);`;
+                    "description") 
+                    VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9);`;
     pool.query (queryText, [logbook.jump_number, logbook.date, logbook.place, logbook.aircraft,
         logbook.equipment, logbook.altitude, logbook.freefall, logbook.total_freefall,
-        logbook.description, logbook.image, logbook.video])
+        logbook.description])
         .then(result => {
             res.sendStatus(201);
         })
