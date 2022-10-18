@@ -30,4 +30,22 @@ function SkydiveForm(props) {
                     description: description, image: image, video: video}
         })
     }
+
+    return (
+        <section>
+            <h2>
+                Skydive Logbook
+            </h2>
+            <form onSubmit={handleSubmit} className='addLog'>
+                <input 
+                required 
+                placeholder="Jump Number"
+                value={jumpNumber}
+                onchange={(event)=> setJumpNumber(event.target.value)}
+                />
+            </form>
+        </section>
+    )
 }
+
+export default SkydiveForm
