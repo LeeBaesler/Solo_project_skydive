@@ -16,4 +16,26 @@ router.get('/', (req,res) => {
     })
 })
 
+router.post('/', (req, res) => {
+    let logbook = req.body;
+    console.log(`Adding logbook entries`, logbook);
+
+    let queryText = `INSERT INTO "logbook" ("jump_number", "date", 
+                    "place", "aircraft", "equipment", "altitude", 
+                    "freefall", "total_freefall", "description", 
+                    "image", "video")
+                    VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, 
+                            $10, $11);`;
+    pool.query (queryText, [logbook.jump_number, logbook.date, logbook.place, logbook.aircraft,
+        logbook.equipment, logbook.altitude, logbook.freefall, logbook.total_freefall,
+        logbook.description, logbook.image, logbook.video])
+        .then(result => {
+            res.sendStatus(201);
+        })
+        .catch(error => {
+            console.log('Error POST adding entries into logbook, error');
+            res.sendStatus(500)
+        });
+})
+
 module.exports = router;
