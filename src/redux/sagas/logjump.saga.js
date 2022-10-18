@@ -6,7 +6,7 @@ function* fetchAllLogs(){
   try {
     const logbook=yield axios.get('/api/logbook');
     console.log('GET logs', logbook.data);
-    yield put ({type: 'SET_LOG',
+    yield put ({type: 'FETCH_LOG',
                 payload: logbook.data})
   }catch{
     console.log("GET logs error")

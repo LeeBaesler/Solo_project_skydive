@@ -3,6 +3,7 @@ const pool = require('../modules/pool')
 const router = express.Router();
 
 
+
 router.get('/', (req,res) => {
     const queryText = `SELECT * FROM "log_book";`;
     pool.query(queryText)
