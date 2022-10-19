@@ -22,9 +22,20 @@ function* addLog(action) {
   }
 }
 
+function* editLogbook(action){
+  try {
+    yield axios.put(`/api/logbook/${action.payload.logbookid}`, action.payload);
+    yield put ({type: 'GET_LOG', payload: action.payload.logbookid});
+  }catch(error){
+    console.log("Error in PUT EDIT LOGBOOK", error);
+  }
+}
+
+
 function* logSaga() {
   yield takeEvery('ADD_LOG', addLog);
   yield takeEvery('GET_LOG', fetchAllLogs);
+  yield takeEvery('EDIT_LOG', editLogbook);
 }
 
 export default logSaga;
