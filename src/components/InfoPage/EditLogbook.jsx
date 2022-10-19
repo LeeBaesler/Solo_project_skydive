@@ -31,4 +31,27 @@ function EditLogbook(){
         total_freefall: totalFreefall,
         description: description,
     }
+
+    const editLogbook = () => {
+        dispatch ({
+            type: 'EDIT_LOG',
+            payload: editLog
+        })
+        console.log('what is payload?:', payload)
+    }
+
+useEffect (() => {
+    dispatch ({
+        type: 'GET_LOG',
+        payload: Number(logbookid)
+    })
+})
+
+return (
+    <section>
+        <h1> Fix Your Logbook</h1>
+        <input type="number" placeholder="Jump Number" 
+    </section>
+)
+
 }
