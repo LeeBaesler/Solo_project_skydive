@@ -1,5 +1,6 @@
 import React from 'react';
 import LogbookDetails from './JumperDetails';
+import JumpHistory from './JumpHistory';
 
 // This is one of our simplest components
 // It doesn't have local state
@@ -12,7 +13,7 @@ function InfoPage() {
     <div className="container">
       <p>Info Page</p>
     </div>
-    <LogbookDetails />
+      <JumpHistory />
     </>
   );
 }
