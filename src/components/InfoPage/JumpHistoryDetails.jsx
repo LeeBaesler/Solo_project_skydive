@@ -25,6 +25,38 @@ function JumpHistoryDetailsWithParams() {
                 <td> Jump Number:</td>
                 <td>{book.jump_number}</td>
             </tr>
+            <tr>
+                <td> Date:</td>
+                <td>{book.date}</td>
+            </tr>
+            <tr>
+                <td> Location:</td>
+                <td>{book.place}</td>
+            </tr>
+            <tr>
+                <td> Aircraft:</td>
+                <td>{book.aircraft}</td>
+            </tr>
+            <tr>
+                <td> Equipment:</td>
+                <td>{book.equipment}</td>
+            </tr>
+            <tr>
+                <td> Altitude:</td>
+                <td>{book.atitude}</td>
+            </tr>
+            <tr>
+                <td> Freefall:</td>
+                <td>{book.freefall}</td>
+            </tr>
+            <tr>
+                <td> Total Freefall:</td>
+                <td>{book.total_freefall}</td>
+            </tr>
+            <tr>
+                <td> Description:</td>
+                <td>{book.description}</td>
+            </tr>
         </tbody>
     </table>
     </>
