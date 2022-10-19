@@ -37,4 +37,23 @@ router.post('/', (req, res) => {
         });
 });
 
+router.put ('/edit/:logbookid', (req,res) => {
+    let logbookid = req.params.log_bookid;
+    console.log(`in PUT route /logbook/edit/${logbookid}`);
+    let skydive = req.body;
+    let query = `UPDATE "log_book" SET "jump_number"=$1, "date"=$2, "place"=$3, "aircraft"=$4, 
+            "equipment"=$5, "altitude"=$6, "freefall"=$7, "total_freefall"=$8, "description"=$9 
+            WHERE id=$10 RETURNING *;`;
+    pool.query(query, [skydive.jump_number, skydive.date, skydive.place, skydive.aircraft, skydive.equipment,
+        skydive.altitude, skydive.freefall, skydive.total_freefall, skydive.description, loogbookid])
+        .then((result) => {
+            res.send(result.rows);
+        }).catch((error) => {
+            console.log(`Error editing logbook`, error);
+            res.sendStatus(500);
+        });
+})
+
+
+
 module.exports = router;
