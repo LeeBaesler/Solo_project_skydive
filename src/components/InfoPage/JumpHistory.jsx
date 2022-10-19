@@ -9,7 +9,7 @@ function JumpHistory(){
 
     const setJumpHistory = (logbook) => {
         dispatch({
-            type: "FETCH_LOG",
+            type: "SET_JUMP_DETAILS",
             payload: logbook
         });
     }
@@ -23,11 +23,16 @@ function JumpHistory(){
     return (
         <section>
             <h1>Logbook History</h1>
-        <div>
-            {logbook.map((logbook,index => <p>{logbook[i]}</p>)}
-        </div>
+        <ul>
+            {logbook.map((logbook,index) => 
+            <li key={index}>Jump Number:{logbook.jump_number} Location: {logbook.place} Date: {logbook.date} Location: {logbook.place} Equipment: {logbook.equipment} Altitude: {logbook.altitude} Freefall: {logbook.freefall} Total Freefall: {logbook.total_freefall} Description: {logbook.description}
+            <button onClick={() => setJumpHistory(logbook)}> View Details 1</button>
+            <button onClick={() => history.push(`jump/${logbook.id}`)}> View Details 2</button>
+            </li>
+            )}
+        </ul>
         </section>
-    )
+            );
 }
 
 export default JumpHistory

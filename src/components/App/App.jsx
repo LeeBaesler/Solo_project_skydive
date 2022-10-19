@@ -21,6 +21,7 @@ import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
 
 import './App.css';
+import JumpHistoryDetailsWithParams from '../InfoPage/JumpHistoryDetails';
 
 
 function App() {
@@ -59,6 +60,13 @@ function App() {
             path="/user"
           >
             <UserPage />
+          </ProtectedRoute>
+
+          <ProtectedRoute
+          exact
+          path="/details/:logbookid"
+          >
+            <JumpHistoryDetailsWithParams />
           </ProtectedRoute>
 
           <ProtectedRoute
