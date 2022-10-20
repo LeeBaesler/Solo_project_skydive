@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory, useParams } from 'react-router-dom';
+import moment from 'moment/moment';
 
 
 function LogbookDetails() {
@@ -55,7 +56,7 @@ function LogbookDetails() {
             type: 'DELETE_LOG',
             payload: editLog
         })
-        history.push('/home');
+        history.push('/info');
     }
 
     console.log('logbook:', logbook)
