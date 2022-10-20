@@ -13,7 +13,7 @@ function JumpHistoryDetailsWithParams() {
 
    console.log("Found Log Entry", book);
    if (book === undefined) {
-    return <h2>Sorry, this isn't the book you're looking for</h2>
+    return <h2>Sorry, there are no jump details you are looking for</h2>
    }
 
    return (
@@ -43,7 +43,7 @@ function JumpHistoryDetailsWithParams() {
             </tr>
             <tr>
                 <td> Altitude:</td>
-                <td>{book.atitude}</td>
+                <td>{book.altitude}</td>
             </tr>
             <tr>
                 <td> Freefall:</td>

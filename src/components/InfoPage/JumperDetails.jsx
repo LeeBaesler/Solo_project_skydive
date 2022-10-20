@@ -60,8 +60,6 @@ function LogbookDetails() {
             <h1>Jump History</h1>
             <div>
                 <section>
-                    <h2> ID Number: {logbook[logbook.length - 1]?.id} </h2>
-                    <input type="number" placeholder="ID Number Above" value={logbookid}/>
                     <h2> Jump Number: {logbook[logbook.length - 1]?.jump_number}</h2>
                     <input type="number" placeholder="Edit Jump Number" value={jumpNumber} onChange={event => setJumpNumber(event.target.value)} />
 

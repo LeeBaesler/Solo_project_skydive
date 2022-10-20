@@ -27,6 +27,8 @@ function SkydiveForm(props) {
                     equipment: equipment, altitude: altitude, freefall: freefall, total_freefall: totalFreefall,
                     description: description}
         })
+
+        history.push('/info')
     
     }
 
