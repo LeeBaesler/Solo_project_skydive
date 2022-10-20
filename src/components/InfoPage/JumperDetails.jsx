@@ -95,7 +95,7 @@ function LogbookDetails() {
 
                     <h2> Description: {book.description}</h2>
                     <input type="text" placeholder="Edit Description" value={description} onChange={event => setDescription(event.target.value)} />
-                    <button onClick={() => editLogbook()}>Edit</button>
+                    <button onClick={() => editLogbook()}>Save</button>
                 </section>
             </div>
         </>

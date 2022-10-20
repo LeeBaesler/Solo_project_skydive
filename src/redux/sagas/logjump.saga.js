@@ -31,11 +31,21 @@ function* editLogbook(action){
   }
 }
 
+function* deleteLogbook(action){
+  try {
+    yield axios.delete(`/api/logbook/${action.payload.id}`, action.payload);
+    yield put ({type: 'DELETE_LOG', payload: action.payload.id});
+  }catch(error){
+    console.log("error in DELETE logbook", error)
+  }
+}
+
 
 function* logSaga() {
   yield takeEvery('ADD_LOG', addLog);
   yield takeEvery('GET_LOG', fetchAllLogs);
   yield takeEvery('EDIT_LOG', editLogbook);
+  yield takeEvery('DELETE_LOG', deleteLogbook);
 }
 
 export default logSaga;
