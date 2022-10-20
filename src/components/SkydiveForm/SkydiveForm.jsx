@@ -5,6 +5,7 @@ import { useHistory } from 'react-router-dom';
 
 
 function SkydiveForm(props) {
+   
     const [jumpNumber, setJumpNumber] = useState('');
     const [date, setDate] = useState('');
     const [place, setPlace] = useState('');

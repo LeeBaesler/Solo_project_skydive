@@ -50,6 +50,14 @@ function LogbookDetails() {
         })
     }
 
+    const deleteLogbook = () => {
+        dispatch({
+            type: 'DELETE_LOG',
+            payload: editLog
+        })
+        history.push('/home');
+    }
+
     console.log('logbook:', logbook)
 
     useEffect(() => {
@@ -96,6 +104,7 @@ function LogbookDetails() {
                     <h2> Description: {book.description}</h2>
                     <input type="text" placeholder="Edit Description" value={description} onChange={event => setDescription(event.target.value)} />
                     <button onClick={() => editLogbook()}>Save</button>
+                    <button onClick={() => deleteLogbook()}> Delete </button>
                 </section>
             </div>
         </>
