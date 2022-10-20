@@ -5,8 +5,8 @@ const router = express.Router();
 
 
 router.get('/', (req,res) => {
-    const queryText = `SELECT * FROM "log_book";`;
-    pool.query(queryText)
+    const queryText = `SELECT * FROM "log_book" WHERE "user_id" = $1;`;
+    pool.query(queryText, [req.user.id])
     .then ((result)=>{
         console.log(`SP DB working`, result);
         res.send(result.rows);
