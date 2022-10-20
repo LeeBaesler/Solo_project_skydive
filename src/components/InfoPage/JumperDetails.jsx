@@ -8,6 +8,16 @@ function LogbookDetails() {
     const history = useHistory();
     const logbook = useSelector(store => store.logbook);
 
+    let params = useParams();
+    console.log(params);
+
+    let logbookid = params.logbookid;
+
+    let book = logbook.find(book => book.id === Number(logbookid));
+    if (book === undefined) {
+        return <h2> Sorry, no edit available for jump you are looking for</h2>
+    }
+
     const [id, setId] = useState('');
     const [jumpNumber, setJumpNumber] = useState('');
     const [date, setDate] = useState('');
@@ -19,7 +29,6 @@ function LogbookDetails() {
     const [totalFreefall, setTotalFreefall] = useState('');
     const [description, setDescription] = useState('');
 
-    const { logbookid } = useParams();
 
     const editLog = {
         logbookid: Number(logbookid),
@@ -60,31 +69,31 @@ function LogbookDetails() {
             <h1>Jump History</h1>
             <div>
                 <section>
-                    <h2> Jump Number: {logbook[logbook.length - 1]?.jump_number}</h2>
+                    <h2> Jump Number: {book.jump_number}</h2>
                     <input type="number" placeholder="Edit Jump Number" value={jumpNumber} onChange={event => setJumpNumber(event.target.value)} />
 
-                    <h2> Most Recent Jump: {logbook[logbook.length - 1]?.date}</h2>
+                    <h2> Most Recent Jump: {book.date}</h2>
                     <input type="text" placeholder="Edit Date" value={date} onChange={event => setDate(event.target.value)} />
 
-                    <h2> Last Location: {logbook[logbook.length - 1]?.place}</h2>
+                    <h2> Last Location: {book.place}</h2>
                     <input type="text" placeholder="Edit Location" value={place} onChange={event => setPlace(event.target.value)} />
 
-                    <h2> Aircraft: {logbook[logbook.length - 1]?.aircraft}</h2>
+                    <h2> Aircraft: {book.aircraft}</h2>
                     <input type="text" placeholder="Edit Aircraft" value={aircraft} onChange={event => setAircraft(event.target.value)} />
 
-                    <h2> Equipment: {logbook[logbook.length - 1]?.equipment}</h2>
+                    <h2> Equipment: {book.equipment}</h2>
                     <input type="text" placeholder="Edit Equipment" value={equipment} onChange={event => setEquipment(event.target.value)} />
 
-                    <h2> Altitude: {logbook[logbook.length - 1]?.altitude}</h2>
+                    <h2> Altitude: {book.altitude}</h2>
                     <input type="number" placeholder="Edit Altitude" value={altitude} onChange={event => setAltitude(event.target.value)} />
 
-                    <h2> Freefall: {logbook[logbook.length - 1]?.freefall}</h2>
+                    <h2> Freefall: {book.freefall}</h2>
                     <input type="number" placeholder="Edit Freefall" value={freefall} onChange={event => setFreefall(event.target.value)} />
 
-                    <h2> Total Freefall: {logbook[logbook.length - 1]?.total_freefall}</h2>
+                    <h2> Total Freefall: {book.total_freefall}</h2>
                     <input type="number" placeholder="Edit Total Freefall" value={totalFreefall} onChange={event => setTotalFreefall(event.target.value)} />
 
-                    <h2> Description: {logbook[logbook.length - 1]?.description}</h2>
+                    <h2> Description: {book.description}</h2>
                     <input type="text" placeholder="Edit Description" value={description} onChange={event => setDescription(event.target.value)} />
                     <button onClick={() => editLogbook()}>Edit</button>
                 </section>
