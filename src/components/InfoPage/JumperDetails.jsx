@@ -46,6 +46,7 @@ function LogbookDetails() {
             type: 'EDIT_LOG',
             payload: editLog
         })
+        history.push('/info');
     }
     
     const deleteLogbook = () => {
@@ -53,7 +54,7 @@ function LogbookDetails() {
             type: 'DELETE_LOG',
             payload: editLog
         })
-        history.push('/jump/history');
+        history.push('/info');
     }
     
     console.log('logbook:', logbook)
@@ -62,6 +63,14 @@ function LogbookDetails() {
         //find the logbook in redux using the parameter id
        if(book !== undefined){ 
         setJumpNumber(book.jump_number);
+        setDate(book.date);
+        setPlace(book.place);
+        setAircraft(book.aircraft);
+        setEquipment(book.equipment);
+        setAltitude(book.altitude);
+        setFreefall(book.freefall);
+        setTotalFreefall(book.total_freefall);
+        setDescription(book.description);
         
         console.log('book', book);
     }

@@ -3,6 +3,7 @@ import errors from './errors.reducer';
 import user from './user.reducer';
 import logbook from './logbook.reducer';
 import jumpHistory from './jumpHistory.reducer';
+import content from './content.reducer';
 
 // rootReducer is the primary reducer for our entire project
 // It bundles up all of the other reducers so our project can use them.
@@ -15,6 +16,7 @@ const rootReducer = combineReducers({
   user, // will have an id and username if someone is logged in
   logbook, //logbook reducer
   jumpHistory, //jumpHistory Details page
+  content, // content reducer
 });
 
 export default rootReducer;

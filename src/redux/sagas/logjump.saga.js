@@ -34,7 +34,7 @@ function* editLogbook(action){
 function* deleteLogbook(action){
   try {
     yield axios.delete(`/api/logbook/${action.payload.logbookid}`, action.payload);
-    yield put ({type: 'GET_LOG'});
+    yield put ({type: 'GET_LOG', payload: action.payload.logbookid});
   }catch(error){
     console.log("error in DELETE logbook", error)
   }
