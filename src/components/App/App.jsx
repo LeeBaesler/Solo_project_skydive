@@ -76,7 +76,7 @@ function App() {
             exact
             path="/info"
           >
-            <InfoPage />
+            <JumpHistory />
           </ProtectedRoute>
           <ProtectedRoute
           exact

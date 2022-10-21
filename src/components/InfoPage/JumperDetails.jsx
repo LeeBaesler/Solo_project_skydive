@@ -56,7 +56,7 @@ function LogbookDetails() {
             type: 'DELETE_LOG',
             payload: editLog
         })
-        history.push('/info');
+        history.push('/jump/history');
     }
 
     console.log('logbook:', logbook)
