@@ -25,6 +25,7 @@ import JumpHistoryDetailsWithParams from '../InfoPage/JumpHistoryDetails';
 import JumpHistory from '../InfoPage/JumpHistory';
 import LogbookDetails from '../InfoPage/JumperDetails';
 import ContentForm from '../Content/ContentForm';
+import ContentHistory from '../ContentHistory/ContentHistory';
 
 
 function App() {
@@ -34,6 +35,7 @@ function App() {
 
   useEffect(() => {
     dispatch({type: "GET_LOG"});
+    dispatch({type: "GET_CONTENT"});
     dispatch({ type: 'FETCH_USER' });
   }, [dispatch]);
 
@@ -78,6 +80,13 @@ function App() {
           path="/content/form"
           >
             <ContentForm />
+          </ProtectedRoute>
+
+          <ProtectedRoute
+          exact
+          path="/content/history"
+          >
+            <ContentHistory />
           </ProtectedRoute>
 
           <ProtectedRoute
