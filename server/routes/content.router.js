@@ -20,8 +20,8 @@ router.post('/', (req, res) => {
     console.log(`Adding content entries`, content);
 
     let queryText = `INSERT INTO "content" ("image_url", "image_description", "video_url", 
-                    "video_description") 
-                    VALUES ($1, $2, $3, $4);`;
+                    "video_description", "user_id") 
+                    VALUES ($1, $2, $3, $4, $5);`;
     pool.query (queryText, [content.image_url, content.image_description, content.video_url,
                  content.video_description, req.user.id])
         .then(result => {
@@ -35,17 +35,30 @@ router.post('/', (req, res) => {
 
 router.put ('/:contentid', (req,res) => {
     let contentid = req.params.contentid;
-    console.log(`in PUT route /logbook/edit/${logbookid}`);
-    let skydive = req.body;
-    let query = `UPDATE "log_book" SET "jump_number"=$1, "date"=$2, "place"=$3, "aircraft"=$4, 
-            "equipment"=$5, "altitude"=$6, "freefall"=$7, "total_freefall"=$8, "description"=$9 
-            WHERE id=$10 RETURNING *;`;
-    pool.query(query, [skydive.jump_number, skydive.date, skydive.place, skydive.aircraft, skydive.equipment,
-        skydive.altitude, skydive.freefall, skydive.total_freefall, skydive.description, logbookid])
+    console.log(`in PUT route /content/edit/${contentid}`);
+    let content = req.body;
+    let query = `UPDATE "content" SET "image_url"=$1, "image_description"=$2, 
+                "video_url"=$3, "video_description"=$4 WHERE id=$5 RETURNING *;`;
+    pool.query(query, [content.image_url, content.image_description, content.video_url, content.video_description, contentid])
         .then((result) => {
             res.send(result.rows);
         }).catch((error) => {
-            console.log(`Error editing logbook`, error);
+            console.log(`Error editing content`, error);
             res.sendStatus(500);
         });
 })
+
+router.delete('/:contentid', (req,res) => {
+    let contentid = req.params.contentid;
+    pool.query('DELETE FROM "content" WHERE id=$1', [req.params.contentid])
+    .then((result) => {
+        res.sendStatus(200);
+    }).catch((error) => {
+        console.log('Error in DELETE content', error);
+        res.sendStatus(500);
+    })
+});
+
+
+
+module.exports = router;
