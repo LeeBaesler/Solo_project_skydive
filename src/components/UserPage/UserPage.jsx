@@ -42,7 +42,7 @@ return (
               {data.main ? <h1>{data.main.temp} °F</h1> : null}  
           </div>
           <div className="description">
-            <p>Description??</p>
+            <p>Description</p>
             {data.weather ? <h1>{data.weather[0].description}</h1> : null }
           </div>
           <div className="cloudCoverage">

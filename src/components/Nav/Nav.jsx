@@ -28,6 +28,10 @@ function Nav() {
               Home
             </Link>
 
+            <Link className="navLink" to="/content/form">
+              Content Form
+            </Link>
+
             <Link className="navLink" to="/info">
               Jump History
             </Link>

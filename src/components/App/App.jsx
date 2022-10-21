@@ -24,6 +24,7 @@ import './App.css';
 import JumpHistoryDetailsWithParams from '../InfoPage/JumpHistoryDetails';
 import JumpHistory from '../InfoPage/JumpHistory';
 import LogbookDetails from '../InfoPage/JumperDetails';
+import ContentForm from '../Content/ContentForm';
 
 
 function App() {
@@ -73,6 +74,13 @@ function App() {
           </ProtectedRoute>
 
           <ProtectedRoute
+          exact
+          path="/content/form"
+          >
+            <ContentForm />
+          </ProtectedRoute>
+
+          <ProtectedRoute
             // logged in shows InfoPage else shows LoginPage
             exact
             path="/info"
@@ -84,6 +92,13 @@ function App() {
           path="/details/edit/:logbookid"
           >
             <LogbookDetails />
+          </ProtectedRoute>
+
+          <ProtectedRoute
+          exact
+          path="/content"
+          >
+            <ContentForm />
           </ProtectedRoute>
 
           <Route
