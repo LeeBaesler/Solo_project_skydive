@@ -35,6 +35,30 @@ function ContentForm(props) {
                 value={image}
                 onChange={(event) => setImage(event.target.value)}
                 />
+
+                <input 
+                required
+                placeholder='image description'
+                value={imageDescription}
+                onChange={(event) => setImageDescription(event.target.value)}
+                />
+
+                <input 
+                required
+                placeholder='video link'
+                value={video}
+                onChange={(event) => setVideo(event.target.value)}
+                />
+
+                <input
+                required
+                placeholder='video description'
+                value={videoDescription}
+                onChange={(event) => setVideoDescription(event.target.value)}
+                />
+                <button type="submit">
+                    Add Content
+                </button>
             </form>
         </div>
     )
