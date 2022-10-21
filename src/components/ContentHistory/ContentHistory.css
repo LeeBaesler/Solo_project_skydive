@@ -1,4 +1,9 @@
 .image{
-    height: 150px;
-    width: 150px;
+    height: 350px;
+    width: 350px;
+}
+
+.video{
+    height: 150%;
+    width: 150%;
 }
