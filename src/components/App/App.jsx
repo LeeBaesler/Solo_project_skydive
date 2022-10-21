@@ -32,6 +32,7 @@ function App() {
   const user = useSelector(store => store.user);
 
   useEffect(() => {
+    dispatch({type: "GET_LOG"});
     dispatch({ type: 'FETCH_USER' });
   }, [dispatch]);
 

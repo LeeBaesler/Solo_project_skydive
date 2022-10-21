@@ -19,9 +19,6 @@ function JumpHistory(){
 
     console.log(logbook);
 
-    useEffect(() => {
-        dispatch({type: "GET_LOG"});
-    }, []);
 
     return (
         <section>

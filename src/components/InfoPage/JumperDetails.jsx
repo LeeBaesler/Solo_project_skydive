@@ -15,11 +15,8 @@ function LogbookDetails() {
     let logbookid = params.logbookid;
 
     let book = logbook.find(book => book.id === Number(logbookid));
-    if (book === undefined) {
-        return <h2> Sorry, no edit available for jump you are looking for</h2>
-    }
-
-    const [id, setId] = useState('');
+    
+    // const [id, setId] = useState('');
     const [jumpNumber, setJumpNumber] = useState('');
     const [date, setDate] = useState('');
     const [place, setPlace] = useState('');
@@ -29,8 +26,8 @@ function LogbookDetails() {
     const [freefall, setFreefall] = useState('');
     const [totalFreefall, setTotalFreefall] = useState('');
     const [description, setDescription] = useState('');
-
-
+    
+    
     const editLog = {
         logbookid: Number(logbookid),
         jump_number: jumpNumber,
@@ -43,14 +40,14 @@ function LogbookDetails() {
         total_freefall: totalFreefall,
         description: description,
     }
-
+    
     const editLogbook = () => {
         dispatch({
             type: 'EDIT_LOG',
             payload: editLog
         })
     }
-
+    
     const deleteLogbook = () => {
         dispatch({
             type: 'DELETE_LOG',
@@ -58,13 +55,20 @@ function LogbookDetails() {
         })
         history.push('/jump/history');
     }
-
+    
     console.log('logbook:', logbook)
-
+    
     useEffect(() => {
-        dispatch({ type: 'GET_LOG' });
-    }, []);
-
+        //find the logbook in redux using the parameter id
+       if(book !== undefined){ 
+        setJumpNumber(book.jump_number);
+        
+        console.log('book', book);
+    }
+        // if the  book is found update the local state with the books values
+        //
+    }, [book]); //only run this when book value changes
+    
     const setLogbookDetails = (logbook) => {
         dispatch({
             type: "FETCH_LOG",
@@ -73,6 +77,10 @@ function LogbookDetails() {
         console.log(logbook)
     }
 
+    if (book === undefined) {
+        return <h2> Sorry, no edit available for jump you are looking for</h2>
+    }
+    
     return (
         <>
             <h1>Jump History</h1>
