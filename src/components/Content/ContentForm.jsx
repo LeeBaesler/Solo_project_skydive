@@ -30,7 +30,7 @@ function ContentForm(props) {
             </h2>
             <form onSubmit={handleSubmit} className="addcontent">
                 <input
-                required
+                
                 type="text"
                 placeholder='image link'
                 value={image}
@@ -38,21 +38,21 @@ function ContentForm(props) {
                 />
 
                 <input 
-                required
+                
                 placeholder='image description'
                 value={imageDescription}
                 onChange={(event) => setImageDescription(event.target.value)}
                 />
 
                 <input 
-                required
+                
                 placeholder='video link'
                 value={video}
                 onChange={(event) => setVideo(event.target.value)}
                 />
 
                 <input
-                required
+                
                 placeholder='video description'
                 value={videoDescription}
                 onChange={(event) => setVideoDescription(event.target.value)}
