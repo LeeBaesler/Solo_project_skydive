@@ -1,6 +1,6 @@
 import React from 'react';
-import LogbookDetails from './JumperDetails';
-import JumpHistory from './JumpHistory';
+import LogbookDetails from '../EditDeleteJump/JumperDetails';
+import JumpHistory from '../JumperHistory/JumpHistory';
 
 // This is one of our simplest components
 // It doesn't have local state

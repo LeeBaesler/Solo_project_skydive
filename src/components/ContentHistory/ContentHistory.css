@@ -1,9 +1,26 @@
 .image{
+    margin: auto;
     height: 350px;
     width: 350px;
+    padding: 5px
+}
+
+.imageDescription{
+    margin: auto;
+    padding: 1px;
 }
 
 .video{
-    height: 150%;
-    width: 150%;
+    margin: left;
+    padding: 5px;
 }
+
+.videoDescription{
+    margin: auto;
+    padding: 1px;
+}
+
+/* margin-top: 200px; */
+   /* margin-left: 10px; */
+   /* padding: 10px; */
+   /* width: 200px; */

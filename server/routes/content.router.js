@@ -54,7 +54,7 @@ router.delete('/:contentid', (req,res) => {
     .then((result) => {
         res.sendStatus(200);
     }).catch((error) => {
-        console.log('Error in DELETE content', error);
+        console.log('Error in delete content server', error);
         res.sendStatus(500);
     })
 });

@@ -8,6 +8,12 @@ function JumpHistory(){
     const logbook = useSelector(store => store.logbook);
     const userId =useSelector(store => store.user.id);
 
+    useEffect (() => {
+        dispatch({
+            type: 'GET_LOG',
+        })
+    }, []);
+
     return (
         <section>
             <h1>Logbook History</h1>

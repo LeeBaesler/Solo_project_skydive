@@ -21,10 +21,10 @@ import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
 
 import './App.css';
-import JumpHistoryDetailsWithParams from '../InfoPage/JumpHistoryDetails';
-import JumpHistory from '../InfoPage/JumpHistory';
-import LogbookDetails from '../InfoPage/JumperDetails';
-import ContentForm from '../Content/ContentForm';
+import JumpHistoryDetailsWithParams from '../JumpDetails/JumpHistoryDetails';
+import JumpHistory from '../JumperHistory/JumpHistory';
+import LogbookDetails from '../EditDeleteJump/JumperDetails';
+import ContentForm from '../ContentForm/ContentForm';
 import ContentHistory from '../ContentHistory/ContentHistory';
 
 

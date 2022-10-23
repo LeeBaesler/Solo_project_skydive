@@ -1,6 +1,6 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
-import { useHistory } from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
 import './ContentHistory.css'
 import ReactPlayer from 'react-player';
 
@@ -10,9 +10,37 @@ function ContentHistory(){
     const content = useSelector(store => store.content);
     const userId = useSelector(store => store.user.id);
 
-    useEffect(() => {
+    let params = useParams();
+    console.log("params", params)
+
+    let contentid = params.contentid;
+
+    let media = content.find(media => media.id === Number(contentid));
+
+    const [imageUrl, setImageUrl] = useState('');
+    const [imageDescription, setImageDescription] = useState('');
+    const [ videoUrl, setVideoUrl] = useState ('');
+    const [ videoDescription, setVideoDescription] = useState('');
+
+    const editContent = {
+        contentid: Number(contentid),
+        image_url: imageUrl,
+        image_description: imageDescription,
+        video_url: videoUrl,
+        video_description: videoDescription,
+    }
+
+    const deleteContent = () => {
         dispatch({
-            type: "GET_CONTENT",
+            type: 'DELETE_CONTENT',
+            payload: editContent
+        })
+    }
+
+
+    useEffect(() => {
+        dispatch ({
+            type: "GET_CONTENT"
         })
     }, [])
 
@@ -25,9 +53,14 @@ function ContentHistory(){
             <ul>
                 {content.map((content,index) =>
                 content.user_id === userId &&
-                <li> ID: {content.id} Skydive Image: <img className="image"src={content.image_url}/> Description: {content.image_description} <ReactPlayer width='480px' height='240px' controls className="video" url={content.video_url} /> Video Description: {content.video_description}</li>
-                
+                <li> <img className="image"src={content.image_url}/> 
+                   <div className="imageDescription"> Description: {content.image_description} </div>
+                   <ReactPlayer className="video" width='300px' height='150px' controls url={content.video_url} /> 
+                   <div className="videoDescription"> Video Description: {content.video_description} </div>
+                    <button onClick={() => deleteContent()}> Delete</button>
+                    </li>
                 )}
+               
                
             </ul>
         </section>
