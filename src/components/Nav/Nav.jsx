@@ -40,6 +40,10 @@ function Nav() {
               Jump History
             </Link>
 
+            <Link className="navLink" to="/skydive/video">
+              Video
+            </Link>
+
             <LogOutButton className="navLink" />
           </>
         )}

@@ -25,8 +25,10 @@ import JumpHistoryDetailsWithParams from '../Logbook/JumpDetails/JumpHistoryDeta
 import JumpHistory from '../Logbook/JumperHistory/JumpHistory';
 import LogbookDetails from '../Logbook/EditDeleteJump/JumperDetails';
 import ContentForm from '../ContentComponents/ContentForm/ContentForm';
-import ContentHistory from '../ContentComponents/ContentHistory/ContentHistory';
+import ContentHistory from '../ContentComponents/SkydivePhotos/SkydivePhotos';
 import EditContent from '../ContentComponents/DeleteContent/EditDeleteContent';
+import SkydiveVideo from '../ContentComponents/SkydiveVideo/SkydiveVideo';
+import EditVideo from '../ContentComponents/EditVideo/EditVideo';
 
 
 function App() {
@@ -116,6 +118,22 @@ function App() {
           path="/content"
           >
             <ContentForm />
+          </ProtectedRoute>
+
+          <ProtectedRoute
+          exact
+          path="/skydive/video"
+          >
+
+            <ProtectedRoute
+            exact
+            path="/skydive/edit/:contentid"
+            >
+
+              <EditVideo />
+            </ProtectedRoute>
+
+            <SkydiveVideo />
           </ProtectedRoute>
 
           <Route

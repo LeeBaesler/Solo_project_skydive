@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
 import { useHistory, useParams } from 'react-router-dom';
-import './ContentHistory.css'
+import './SkydivePhotos.css'
 import ReactPlayer from 'react-player';
 
 function ContentHistory(){
@@ -29,14 +29,6 @@ function ContentHistory(){
         video_url: videoUrl,
         video_description: videoDescription,
     }
-
-    const deleteContent = () => {
-        dispatch({
-            type: 'DELETE_CONTENT',
-            payload: editContent
-        })
-    }
-
 
     useEffect(() => {
         dispatch ({
