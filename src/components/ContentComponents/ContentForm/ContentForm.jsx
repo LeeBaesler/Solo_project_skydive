@@ -20,7 +20,7 @@ function ContentForm(props) {
             payload: {image_url: image, image_description: imageDescription, 
                     video_url: video, video_description: videoDescription}
         })
-        history.push('/content/history')
+        history.push('/skydive/photos')
     }
 
     return(

@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import ReactPlayer from 'react-player';
 
-function SkydiveVideo(){
+function SkydiveVideos(){
     const dispatch = useDispatch();
     const history = useHistory();
     const content = useSelector(store => store.content);
@@ -35,7 +35,7 @@ return (
                 </tr>
                 <tr>
                     <td>
-                    <button onClick={() => history.push(`/skydive/edit/${content.id}`)}> Edit</button>
+                    <button onClick={() => history.push(`/skydive/video/edit/${content.id}`)}> Edit</button>
                     </td>
                 </tr>
             </tbody>
@@ -48,4 +48,4 @@ return (
 
 }
 
-export default SkydiveVideo
+export default SkydiveVideos

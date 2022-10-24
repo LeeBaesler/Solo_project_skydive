@@ -4,7 +4,7 @@ import { useHistory, useParams } from 'react-router-dom';
 import './SkydivePhotos.css'
 import ReactPlayer from 'react-player';
 
-function ContentHistory(){
+function SkydivePhotos(){
     const dispatch = useDispatch();
     const history = useHistory();
     const content = useSelector(store => store.content);
@@ -40,23 +40,33 @@ function ContentHistory(){
 
     return(
         <section>
-            <h1> Skydive Content </h1>
-        
-            <ul>
+            <h1> Skydive Photos </h1>
                 {content.map((content,index) =>
                 content.user_id === userId &&
-                <li> <img className="image"src={content.image_url}/> 
-                   <div className="imageDescription"> Description: {content.image_description} </div>
-                   <ReactPlayer className="video" width='300px' height='150px' controls url={content.video_url} /> 
-                   <div className="videoDescription"> Video Description: {content.video_description} </div>
-                    <button onClick={() => history.push(`/content/edit/${content.id}`)}> Edit</button>
-                    </li>
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>
+                            <img className="image"src={content.image_url} />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                            {content.image_description} 
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                            <button onClick={() => history.push(`/skydive/photo/edit/${content.id}`)}> Edit</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                
                 )}
                
-               
-            </ul>
         </section>
     )
 }
 
-export default ContentHistory
+export default SkydivePhotos

@@ -32,8 +32,8 @@ function Nav() {
               Content Form
             </Link>
 
-            <Link className="navLink" to="/content/history">
-              Skydive Content
+            <Link className="navLink" to="/skydive/photos">
+              Photos
             </Link>
 
             <Link className="navLink" to="/info">

@@ -1,9 +1,8 @@
 import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
-import ReactPlayer from 'react-player';
 import { useHistory, useParams } from 'react-router-dom';
 
-function EditVideo(){
+function EditPhotos(){
     const dispatch = useDispatch();
     const history = useHistory();
     const content = useSelector(store => store.content);
@@ -16,20 +15,19 @@ function EditVideo(){
 
     let media = content.find(media => media.id === Number(contentid));
 
+    const [imageUrl, setImageUrl] = useState('');
+    const [imageDescription, setImageDescription] = useState('');
 
-    const [ videoUrl, setVideoUrl] = useState ('');
-    const [ videoDescription, setVideoDescription] = useState('');
-    
-    const editVideo = {
+    const editContent = {
         contentid: Number(contentid),
-        video_url: videoUrl,
-        video_description: videoDescription,
+        image_url: imageUrl,
+        image_description: imageDescription,
     }
 
     const deleteContent = () => {
         dispatch({
             type: 'DELETE_CONTENT',
-            payload: editVideo
+            payload: editContent
         })
         history.push('/content/form');
     }
@@ -37,24 +35,22 @@ function EditVideo(){
     useEffect(() => {
         //find the logbook in redux using the parameter id
        if(media !== undefined){ 
-        setVideoUrl(media.video_url);
-        setVideoDescription(media.video_description);
-        console.log('media', media);
+        setImageUrl(media.image_url);
+        setImageDescription(media.image_description);
     }
     }, [media]);
 
     return(
-    <section>
-        <h1>Delete Video</h1>
-        <div>
-        <ReactPlayer url={media.video_url} />
-        <h1> {media.video_description}</h1>
-        <button onClick={() => deleteContent()}> Delete </button>
-        </div>
-        </section>
-    )
+        <section>
+            <h1>Delete Photos</h1>
+            <div>
+                <img src={media.image_url} />
+            <button onClick={() => deleteContent()}> Delete </button>
+            </div>
+            </section>
+        )
+    
 
 }
 
-export default EditVideo;
-
+export default EditPhotos
