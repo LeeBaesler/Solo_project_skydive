@@ -6,36 +6,36 @@ import ReactPlayer from 'react-player';
 function SkydiveVideos(){
     const dispatch = useDispatch();
     const history = useHistory();
-    const content = useSelector(store => store.content);
+    const videos = useSelector(store => store.videos);
     const userId = useSelector(store => store.user.id);
 
     useEffect(() => {
         dispatch ({
-            type: "GET_CONTENT"
+            type: "GET_VIDEOS"
         })
     }, [])
-    console.log('content', content)
+    console.log('videos', videos)
 
 return (
     <section>
         <h1> Skydive Video </h1>
-       {content.map((content,index) =>
-       content.user_id === userId &&
+       {videos.map((videos,index) =>
+       videos.user_id === userId &&
        <table>
             <tbody>
                 <tr>
                     <td>
-                    <ReactPlayer className="video" width='300px' height='150px' controls url={content.video_url} /> 
+                    <ReactPlayer className="video" width='300px' height='150px' controls url={videos.video_url} /> 
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        {content.video_description}
+                        {videos.video_description}
                     </td>
                 </tr>
                 <tr>
                     <td>
-                    <button onClick={() => history.push(`/skydive/video/edit/${content.id}`)}> Edit</button>
+                    <button onClick={() => history.push(`/skydive/video/edit/${videos.id}`)}> Edit</button>
                     </td>
                 </tr>
             </tbody>

@@ -6,50 +6,50 @@ import { useHistory, useParams } from 'react-router-dom';
 function EditVideo(){
     const dispatch = useDispatch();
     const history = useHistory();
-    const content = useSelector(store => store.content);
+    const videos = useSelector(store => store.videos);
     const userId = useSelector(store => store.user.id);
 
     let params = useParams();
     console.log("params", params);
 
-    let contentid = params.contentid;
+    let videosid = params.videosid;
 
-    let media = content.find(media => media.id === Number(contentid));
+    let video = videos.find(video => video.id === Number(videosid));
 
 
     const [ videoUrl, setVideoUrl] = useState ('');
     const [ videoDescription, setVideoDescription] = useState('');
     
-    const editVideo = {
-        contentid: Number(contentid),
+    const editVideos = {
+        videosid: Number(videosid),
         video_url: videoUrl,
         video_description: videoDescription,
     }
 
-    const deleteContent = () => {
+    const deleteVideos = () => {
         dispatch({
-            type: 'DELETE_CONTENT',
-            payload: editVideo
+            type: 'DELETE_VIDEOS',
+            payload: editVideos
         })
         history.push('/content/form');
     }
 
     useEffect(() => {
         //find the logbook in redux using the parameter id
-       if(media !== undefined){ 
-        setVideoUrl(media.video_url);
-        setVideoDescription(media.video_description);
-        console.log('media', media);
+       if(video !== undefined){ 
+        setVideoUrl(video.video_url);
+        setVideoDescription(video.video_description);
+        console.log('video', video);
     }
-    }, [media]);
+    }, [video]);
 
     return(
     <section>
         <h1>Delete Video</h1>
         <div>
-        <ReactPlayer url={media.video_url} />
-        <h1> {media.video_description}</h1>
-        <button onClick={() => deleteContent()}> Delete </button>
+        <ReactPlayer url={video.video_url} />
+        <h1> {video.video_description}</h1>
+        <button onClick={() => deleteVideos()}> Delete </button>
         </div>
         </section>
     )

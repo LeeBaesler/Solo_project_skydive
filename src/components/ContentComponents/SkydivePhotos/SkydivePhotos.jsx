@@ -4,60 +4,69 @@ import { useHistory, useParams } from 'react-router-dom';
 import './SkydivePhotos.css'
 import ReactPlayer from 'react-player';
 
-function SkydivePhotos(){
+function SkydivePhotos(props){
+    const [image, setImage] = useState('');
+    const [imageDescription, setImageDescription] = useState('');
     const dispatch = useDispatch();
     const history = useHistory();
-    const content = useSelector(store => store.content);
+    const photos = useSelector(store => store.photos);
     const userId = useSelector(store => store.user.id);
 
+    const handleSubmit = event => {
+        event.preventDefault()
+
+        dispatch({
+            type: 'ADD_PHOTOS',
+            payload: { image_url: image, image_description: imageDescription}
+        })
+
+        history.push('/info')
+    }
+    
     let params = useParams();
     console.log("params", params)
 
-    let contentid = params.contentid;
+    let photosid = params.photosid;
 
-    let media = content.find(media => media.id === Number(contentid));
+    let images = photos.find(images => images.id === Number(photosid));
 
     const [imageUrl, setImageUrl] = useState('');
     const [imageDescription, setImageDescription] = useState('');
-    const [ videoUrl, setVideoUrl] = useState ('');
-    const [ videoDescription, setVideoDescription] = useState('');
 
-    const editContent = {
-        contentid: Number(contentid),
+    const editPhotos = {
+        photosid: Number(photosid),
         image_url: imageUrl,
         image_description: imageDescription,
-        video_url: videoUrl,
-        video_description: videoDescription,
     }
 
     useEffect(() => {
         dispatch ({
-            type: "GET_CONTENT"
+            type: "GET_PHOTOS"
         })
     }, [])
 
-    console.log("content", content)
+    console.log("photos", photos)
 
     return(
         <section>
             <h1> Skydive Photos </h1>
-                {content.map((content,index) =>
-                content.user_id === userId &&
+                {photos.map((photos,index) =>
+                photos.user_id === userId &&
                 <table>
                     <tbody>
                         <tr>
                             <td>
-                            <img className="image"src={content.image_url} />
+                            <img className="image"src={photos.image_url} />
                             </td>
                         </tr>
                         <tr>
                             <td>
-                            {content.image_description} 
+                            {photos.image_description} 
                             </td>
                         </tr>
                         <tr>
                             <td>
-                            <button onClick={() => history.push(`/skydive/photo/edit/${content.id}`)}> Edit</button>
+                            <button onClick={() => history.push(`/skydive/photo/edit/${photos.id}`)}> Edit</button>
                             </td>
                         </tr>
                     </tbody>

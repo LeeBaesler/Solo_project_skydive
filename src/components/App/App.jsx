@@ -125,7 +125,7 @@ function App() {
         
             <ProtectedRoute
             exact
-            path="/skydive/video/edit/:contentid"
+            path="/skydive/video/edit/:videosid"
             >
 
               <EditVideo />
@@ -133,7 +133,7 @@ function App() {
 
             <ProtectedRoute
             exact
-            path="/skydive/photo/edit/:contentid"
+            path="/skydive/photo/edit/:photosid"
             >
               <EditPhotos />
             </ProtectedRoute>
