@@ -3,7 +3,7 @@ import errors from './errors.reducer';
 import user from './user.reducer';
 import logbook from './logbook.reducer';
 import jumpHistory from './jumpHistory.reducer';
-import content from './content.reducer';
+import videos from './videos.reducer';
 import contentHistory from './contentHistory.reducer';
 
 // rootReducer is the primary reducer for our entire project
@@ -17,7 +17,7 @@ const rootReducer = combineReducers({
   user, // will have an id and username if someone is logged in
   logbook, //logbook reducer
   jumpHistory, //jumpHistory Details page
-  content, // content reducer
+  videos, // content reducer
   contentHistory, //contentHistory Details page
 });
 
