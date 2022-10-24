@@ -78,13 +78,6 @@ function LogbookDetails() {
         //
     }, [book]); //only run this when book value changes
     
-    const setLogbookDetails = (logbook) => {
-        dispatch({
-            type: "FETCH_LOG",
-            payload: logbook,
-        })
-        console.log(logbook)
-    }
 
     if (book === undefined) {
         return <h2> Sorry, no edit available for jump you are looking for</h2>

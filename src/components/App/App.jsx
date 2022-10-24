@@ -21,11 +21,12 @@ import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
 
 import './App.css';
-import JumpHistoryDetailsWithParams from '../JumpDetails/JumpHistoryDetails';
-import JumpHistory from '../JumperHistory/JumpHistory';
-import LogbookDetails from '../EditDeleteJump/JumperDetails';
-import ContentForm from '../ContentForm/ContentForm';
-import ContentHistory from '../ContentHistory/ContentHistory';
+import JumpHistoryDetailsWithParams from '../Logbook/JumpDetails/JumpHistoryDetails';
+import JumpHistory from '../Logbook/JumperHistory/JumpHistory';
+import LogbookDetails from '../Logbook/EditDeleteJump/JumperDetails';
+import ContentForm from '../ContentComponents/ContentForm/ContentForm';
+import ContentHistory from '../ContentComponents/ContentHistory/ContentHistory';
+import EditContent from '../ContentComponents/DeleteContent/EditDeleteContent';
 
 
 function App() {
@@ -84,9 +85,16 @@ function App() {
 
           <ProtectedRoute
           exact
-          path="/content/history"
+          path="/content/history/"
           >
             <ContentHistory />
+          </ProtectedRoute>
+
+          <ProtectedRoute
+          exact
+          path="/content/edit/:contentid"
+          >
+          <EditContent />
           </ProtectedRoute>
 
           <ProtectedRoute

@@ -57,7 +57,7 @@ function ContentHistory(){
                    <div className="imageDescription"> Description: {content.image_description} </div>
                    <ReactPlayer className="video" width='300px' height='150px' controls url={content.video_url} /> 
                    <div className="videoDescription"> Video Description: {content.video_description} </div>
-                    <button onClick={() => deleteContent()}> Delete</button>
+                    <button onClick={() => history.push(`/content/edit/${content.id}`)}> Edit</button>
                     </li>
                 )}
                

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import './UserPage.css';
 import RegisterPage from '../RegisterPage/RegisterPage';
-import SkydiveForm from '../SkydiveForm/SkydiveForm';
+import SkydiveForm from '../Logbook/SkydiveForm/SkydiveForm';
 
 
 function OpenWeather() {
