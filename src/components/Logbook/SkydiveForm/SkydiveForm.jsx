@@ -79,14 +79,14 @@ function SkydiveForm(props) {
                 <input 
                 required 
                 type="number"
-                placeholder="Freefall"
+                placeholder="Freefall/Seconds"
                 value={freefall}
                 onChange={(event)=> setFreefall(event.target.value)}
                 />
                 <input 
                 required 
                 type="number"
-                placeholder="Total Freefall"
+                placeholder="Total Freefall/Seconds"
                 value={totalFreefall}
                 onChange={(event)=> setTotalFreefall(event.target.value)}
                 />

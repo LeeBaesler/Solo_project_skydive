@@ -46,7 +46,7 @@ return (
             <tbody>
                 <tr>
                     <td>
-                    <ReactPlayer className="video" width='300px' height='150px' controls url={videos.video_url} /> 
+                    <ReactPlayer className="video" width='600px' height='600px' controls url={videos.video_url} /> 
                     </td>
                 </tr>
                 <tr>
