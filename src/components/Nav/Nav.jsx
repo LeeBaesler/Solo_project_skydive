@@ -28,12 +28,12 @@ function Nav() {
               Home
             </Link>
 
-            <Link className="navLink" to="/skydive/photos">
-              Photos
-            </Link>
-
             <Link className="navLink" to="/info">
               Jump History
+            </Link>
+
+            <Link className="navLink" to="/skydive/photos">
+              Photos
             </Link>
 
             <Link className="navLink" to="/skydive/video">

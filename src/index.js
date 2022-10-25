@@ -8,6 +8,7 @@ import createSagaMiddleware from 'redux-saga';
 import { takeEvery, put } from 'redux-saga/effects';
 import axios from 'axios';
 import App from './components/App/App';
+import './themes/themes.vapor.css'
 
 
 // const sagaMiddleware = createSagaMiddleware();
