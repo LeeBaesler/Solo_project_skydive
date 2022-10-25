@@ -29,7 +29,7 @@ function EditPhotos(){
             type: 'DELETE_PHOTOS',
             payload: editPhotos
         })
-        history.push('/content/form');
+        history.push('/home');
     }
 
     useEffect(() => {

@@ -31,7 +31,7 @@ function EditVideo(){
             type: 'DELETE_VIDEOS',
             payload: editVideos
         })
-        history.push('/content/form');
+        history.push('/home');
     }
 
     useEffect(() => {

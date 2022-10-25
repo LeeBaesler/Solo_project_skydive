@@ -16,7 +16,7 @@ function SkydiveVideos(){
             type: "ADD_VIDEOS",
             payload: {video_url: videoUrl}
         })
-        history.push('/info')
+        history.push('/home')
     }
     
     useEffect(() => {

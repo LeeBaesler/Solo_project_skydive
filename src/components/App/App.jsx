@@ -82,13 +82,6 @@ function App() {
 
           <ProtectedRoute
           exact
-          path="/content/form"
-          >
-            <ContentForm />
-          </ProtectedRoute>
-
-          <ProtectedRoute
-          exact
           path="/skydive/photos/"
           >
             <SkydivePhotos />
@@ -115,14 +108,6 @@ function App() {
             <LogbookDetails />
           </ProtectedRoute>
 
-          <ProtectedRoute
-          exact
-          path="/content"
-          >
-            <ContentForm />
-          </ProtectedRoute>
-
-        
             <ProtectedRoute
             exact
             path="/skydive/video/edit/:videosid"

@@ -20,7 +20,7 @@ function SkydivePhotos(props){
             payload: { image_url: imageUrl, image_description: imageDescription}
         })
 
-        history.push('/info')
+        history.push('/home')
     }
     
     let params = useParams();
