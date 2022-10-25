@@ -5,7 +5,7 @@ import './SkydivePhotos.css'
 import ReactPlayer from 'react-player';
 
 function SkydivePhotos(props){
-    const [image, setImage] = useState('');
+    const [imageUrl, setImageUrl] = useState('');
     const [imageDescription, setImageDescription] = useState('');
     const dispatch = useDispatch();
     const history = useHistory();
@@ -17,7 +17,7 @@ function SkydivePhotos(props){
 
         dispatch({
             type: 'ADD_PHOTOS',
-            payload: { image_url: image, image_description: imageDescription}
+            payload: { image_url: imageUrl, image_description: imageDescription}
         })
 
         history.push('/info')
@@ -29,9 +29,6 @@ function SkydivePhotos(props){
     let photosid = params.photosid;
 
     let images = photos.find(images => images.id === Number(photosid));
-
-    const [imageUrl, setImageUrl] = useState('');
-    const [imageDescription, setImageDescription] = useState('');
 
     const editPhotos = {
         photosid: Number(photosid),
@@ -50,6 +47,17 @@ function SkydivePhotos(props){
     return(
         <section>
             <h1> Skydive Photos </h1>
+            <form onSubmit={handleSubmit} className="addPhotos">
+                <input
+                type='text'
+                placeholder='image link'
+                value={imageUrl}
+                onChange={(event) => setImageUrl(event.target.value)}
+                />
+                <button type='submit'>
+                    Add Photo
+                </button>
+            </form>
                 {photos.map((photos,index) =>
                 photos.user_id === userId &&
                 <table>

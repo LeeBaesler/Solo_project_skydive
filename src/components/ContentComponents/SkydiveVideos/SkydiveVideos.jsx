@@ -8,7 +8,17 @@ function SkydiveVideos(){
     const history = useHistory();
     const videos = useSelector(store => store.videos);
     const userId = useSelector(store => store.user.id);
+    const [videoUrl, setVideoUrl] = useState('');
 
+    const handleSubmit = event => {
+        event.preventDefault()
+        dispatch ({
+            type: "ADD_VIDEOS",
+            payload: {video_url: videoUrl}
+        })
+        history.push('/info')
+    }
+    
     useEffect(() => {
         dispatch ({
             type: "GET_VIDEOS"
@@ -19,6 +29,17 @@ function SkydiveVideos(){
 return (
     <section>
         <h1> Skydive Video </h1>
+        <form onSubmit={handleSubmit} className='addVideos'>
+            <input 
+            type='text'
+            placeholder='video link'
+            value={videoUrl}
+            onChange={(event) => setVideoUrl(event.target.value)}
+                />
+            <button type='submit'>
+                Add Video
+            </button>
+        </form>
        {videos.map((videos,index) =>
        videos.user_id === userId &&
        <table>
