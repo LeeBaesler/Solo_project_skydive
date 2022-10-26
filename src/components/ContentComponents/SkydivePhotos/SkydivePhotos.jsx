@@ -75,7 +75,7 @@ function SkydivePhotos(props){
                             <img src={photos.image_url} className="image" class="card-img-top" />
                         <div class="card-body">
                            <p class="card-text">{photos.image_description}</p>
-                            <button type="button" class="btn btn-dark" onClick={() => history.push(`/skydive/photo/edit/${photos.id}`)}> Edit</button>
+                            <button  onClick={() => history.push(`/skydive/photo/edit/${photos.id}`)}> Edit</button>
                             </div>
                             </div>
                         </tr>

@@ -9,12 +9,13 @@ function SkydiveVideos(){
     const videos = useSelector(store => store.videos);
     const userId = useSelector(store => store.user.id);
     const [videoUrl, setVideoUrl] = useState('');
+    const [videoDescription, setVideoDescription] = useState('');
 
     const handleSubmit = event => {
         event.preventDefault()
         dispatch ({
             type: "ADD_VIDEOS",
-            payload: {video_url: videoUrl}
+            payload: {video_url: videoUrl, video_description: videoDescription}
         })
         history.push('/home')
     }
@@ -36,6 +37,12 @@ return (
             value={videoUrl}
             onChange={(event) => setVideoUrl(event.target.value)}
                 />
+            <input 
+            type="text"
+            placeholder='video description'
+            value={videoDescription}
+            onChange={(event) => setVideoDescription(event.target.value)}
+            />
             <button type='submit'>
                 Add Video
             </button>
@@ -45,19 +52,13 @@ return (
        <table>
             <tbody>
                 <tr>
-                    <td>
+                    <div class="card">
                     <ReactPlayer className="video" width='600px' height='600px' controls url={videos.video_url} /> 
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        {videos.video_description}
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                    <button onClick={() => history.push(`/skydive/video/edit/${videos.id}`)}> Edit</button>
-                    </td>
+                       <div class = "card-body">
+                       <p class="card-text"> {videos.video_description} </p>
+                    <button type="button" class="btn btn-dark" onClick={() => history.push(`/skydive/video/edit/${videos.id}`)}> Edit</button>
+                </div>
+                </div>
                 </tr>
             </tbody>
        </table>
