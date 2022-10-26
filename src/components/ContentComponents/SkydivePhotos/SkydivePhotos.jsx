@@ -56,6 +56,12 @@ function SkydivePhotos(props){
                 value={imageUrl}
                 onChange={(event) => setImageUrl(event.target.value)}
                 />
+                <input 
+                type="text"
+                placeholder = 'image description'
+                value={imageDescription}
+                onChange={() => setImageDescription(event.target.value)}
+                />
                 <button type='submit'>
                     Add Photo
                 </button>
@@ -65,19 +71,13 @@ function SkydivePhotos(props){
                 <table>
                     <tbody>
                         <tr>
-                            <td>
-                            <img class="img-thumbnail" className="image"src={photos.image_url} />
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                            {photos.image_description} 
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                            <button onClick={() => history.push(`/skydive/photo/edit/${photos.id}`)}> Edit</button>
-                            </td>
+                        <div class="card">
+                            <img src={photos.image_url} className="image" class="card-img-top" />
+                        <div class="card-body">
+                           <p class="card-text">{photos.image_description}</p>
+                            <button  onClick={() => history.push(`/skydive/photo/edit/${photos.id}`)}> Edit</button>
+                            </div>
+                            </div>
                         </tr>
                     </tbody>
                 </table>
