@@ -24,6 +24,14 @@ function EditPhotos(){
         image_description: imageDescription,
     }
 
+    const editPhoto = () => {
+        dispatch({
+            type: 'EDIT_PHOTOS',
+            payload: editPhotos
+        })
+        history.push('home');
+    }
+
     const deletePhotos = () => {
         dispatch({
             type: 'DELETE_PHOTOS',
