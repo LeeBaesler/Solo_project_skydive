@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { useHistory, useParams } from 'react-router-dom';
 import './SkydivePhotos.css'
 import ReactPlayer from 'react-player';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function SkydivePhotos(props){
     const [imageUrl, setImageUrl] = useState('');
@@ -11,6 +12,7 @@ function SkydivePhotos(props){
     const history = useHistory();
     const photos = useSelector(store => store.photos);
     const userId = useSelector(store => store.user.id);
+    
 
     const handleSubmit = event => {
         event.preventDefault()
@@ -64,7 +66,7 @@ function SkydivePhotos(props){
                     <tbody>
                         <tr>
                             <td>
-                            <img className="image"src={photos.image_url} />
+                            <img class="img-thumbnail" className="image"src={photos.image_url} />
                             </td>
                         </tr>
                         <tr>

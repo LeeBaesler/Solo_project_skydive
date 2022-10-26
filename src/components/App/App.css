@@ -55,7 +55,7 @@ Button
 }
 
 .btn:hover {
-  background-color: #008183;
+  background-color: #0A0F0D;
   text-decoration: none;
 }
 
@@ -72,12 +72,12 @@ Button
 
 .btn_asLink:hover {
   background-color: transparent;
-  border-color: #008183;
-  color: #008183;
+  border-color: #0A0F0D;
+  color: #0A0F0D
 }
 
 /* --------------------------------------------------------------------------------
-Alert
+Alert 
 -------------------------------------------------------------------------------- */
 
 .alert {
