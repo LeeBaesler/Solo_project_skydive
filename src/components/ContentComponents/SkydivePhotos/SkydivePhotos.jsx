@@ -48,6 +48,7 @@ function SkydivePhotos(props){
 
     return(
         <section>
+            <div class="container text-center">
             <h1> Skydive Photos </h1>
             <form onSubmit={handleSubmit} className="addPhotos">
                 <input
@@ -66,6 +67,8 @@ function SkydivePhotos(props){
                     Add Photo
                 </button>
             </form>
+            </div>
+            <div class="container text-center">
                 {photos.map((photos,index) =>
                 photos.user_id === userId &&
                 <table>
@@ -83,7 +86,7 @@ function SkydivePhotos(props){
                 </table>
                 
                 )}
-               
+               </div>
         </section>
     )
 }
