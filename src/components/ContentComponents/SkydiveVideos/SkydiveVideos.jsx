@@ -29,6 +29,7 @@ function SkydiveVideos(){
 
 return (
     <section>
+        <div class="container text-center">
         <h1> Skydive Video </h1>
         <form onSubmit={handleSubmit} className='addVideos'>
             <input 
@@ -47,13 +48,15 @@ return (
                 Add Video
             </button>
         </form>
+        </div>
+        <div class="container text-center">
        {videos.map((videos,index) =>
        videos.user_id === userId &&
        <table>
             <tbody>
                 <tr>
                     <div class="card">
-                    <ReactPlayer className="video" width='600px' height='600px' controls url={videos.video_url} /> 
+                    <ReactPlayer className="video" width='600px' height='600px' controls url={videos.video_url}/> 
                        <div class = "card-body">
                        <p class="card-text"> {videos.video_description} </p>
                     <button type="button" class="btn btn-dark" onClick={() => history.push(`/skydive/video/edit/${videos.id}`)}> Edit</button>
@@ -62,9 +65,8 @@ return (
                 </tr>
             </tbody>
        </table>
-       
        )}
-        
+        </div>
     </section>
 )
 

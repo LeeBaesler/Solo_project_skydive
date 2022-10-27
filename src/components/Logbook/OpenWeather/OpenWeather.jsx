@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import './OpenWeather.css';
 
 function OpenWeather() {
 
@@ -19,6 +20,7 @@ function OpenWeather() {
   return (
     <section className="apiData">
         <div class="container text-center">
+        <div class=" border border-dark">
         <div className="search">
           <input 
           value={location}
@@ -43,7 +45,7 @@ function OpenWeather() {
               {data.weather ? <h1>{data.weather[0].description}</h1> : null }
             </div>
             <div className="cloudCoverage">
-              <p>Cloud Coverage</p>
+              <p>Cloud Coverage % </p>
               {data.clouds ? <h1>{data.clouds.all}</h1> : null}
             </div>
           </div>
@@ -55,6 +57,7 @@ function OpenWeather() {
             <div className="wind">
               <p>Wind</p>
               <p> {data.wind ? <h1>{data.wind.speed} mph</h1> : null} </p>
+            </div>
             </div>
           </div>
         </div>

@@ -45,12 +45,12 @@ function EditVideo(){
 
     return(
     <section>
+        
         <h1>Delete Video</h1>
-        <div>
         <ReactPlayer url={video.video_url} />
         <h1> {video.video_description}</h1>
         <button onClick={() => deleteVideos()}> Delete </button>
-        </div>
+    
         </section>
     )
 
