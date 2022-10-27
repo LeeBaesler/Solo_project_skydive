@@ -28,7 +28,7 @@ function JumpHistory(){
                         <ul class="container text-center">
                             
                         <li><div>Jump Number: <div class="badge bg-primary text-wrap">{logbook.jump_number}</div></div> 
-                        <div>Date: <div class="badge bg-primary text-wrap">{logbook.date}</div></div>
+                        <div>Date: <div class="badge bg-primary text-wrap">{new Date(logbook.date).toDateString()}</div></div>
                        <div>Location: <div class="badge bg-primary text-wrap">{logbook.place}</div></div>
                        <div>Aircraft: <div class="badge bg-primary text-wrap">{logbook.aircraft}</div></div>
                         <div>Equipment: <div class="badge bg-primary text-wrap">{logbook.equipment}</div></div>

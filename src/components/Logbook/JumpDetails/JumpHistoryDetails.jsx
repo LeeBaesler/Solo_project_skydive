@@ -27,7 +27,7 @@ function JumpHistoryDetailsWithParams() {
             </tr>
             <tr>
                 <td> Date:</td>
-                <td>{book.date}</td>
+                <td>{new Date(book.date).toDateString()}</td>
             </tr>
             <tr>
                 <td> Location:</td>

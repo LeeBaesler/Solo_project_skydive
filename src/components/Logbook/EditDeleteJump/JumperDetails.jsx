@@ -91,7 +91,7 @@ function LogbookDetails() {
                     <h2> Jump Number: {book.jump_number}</h2>
                     <input type="number" placeholder="Edit Jump Number" value={jumpNumber} onChange={event => setJumpNumber(event.target.value)} />
 
-                    <h2> Most Recent Jump: {book.date}</h2>
+                    <h2> Most Recent Jump: {new Date(book.date).toDateString()}</h2>
                     <input type="text" placeholder="Edit Date" value={date} onChange={event => setDate(event.target.value)} />
 
                     <h2> Last Location: {book.place}</h2>
