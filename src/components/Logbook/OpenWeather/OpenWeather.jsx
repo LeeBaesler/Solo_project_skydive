@@ -18,6 +18,7 @@ function OpenWeather() {
   
   return (
     <section className="apiData">
+        <div class="container text-center">
         <div className="search">
           <input 
           value={location}
@@ -56,6 +57,7 @@ function OpenWeather() {
               <p> {data.wind ? <h1>{data.wind.speed} mph</h1> : null} </p>
             </div>
           </div>
+        </div>
         </div>
         </section>
   )

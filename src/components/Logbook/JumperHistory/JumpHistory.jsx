@@ -26,7 +26,7 @@ function JumpHistory(){
                 <tbody>
                     <tr>
                         <td>
-                         Jump Number:{logbook.jump_number} 
+                         Jump Number: {logbook.jump_number} 
                         </td>
                     </tr>
                     <tr>
