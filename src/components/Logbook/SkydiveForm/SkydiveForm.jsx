@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react";
 import{ useDispatch, useSelector } from 'react-redux';
 import {useHistory } from 'react-router-dom';
+import './SkydiveForm.css';
 
 
 function SkydiveForm(props) {
@@ -34,11 +35,14 @@ function SkydiveForm(props) {
 
     return (
         <div>
-            <h2>
-                Skydive Logbook
+            <h2 className ="header">
+                Enter Recent Jump 
             </h2>
+        
             <form onSubmit={handleSubmit} className='addLog'>
+                <div class="container text-center">
                 <input 
+                className="onetop-row"
                 required
                 type="number"
                 placeholder="Jump Number"
@@ -46,30 +50,37 @@ function SkydiveForm(props) {
                 onChange={(event)=> setJumpNumber(event.target.value)}
                 />
                 <input 
+                className="twotop-row"
                 required 
                 placeholder="Date"
                 value={date}
                 onChange={(event)=> setDate(event.target.value)}
                 />
                 <input 
+                className="threetop-row"
                 required 
                 placeholder="Location"
                 value={place}
                 onChange={(event)=> setPlace(event.target.value)}
                 />
                 <input 
+                className="fourtop-row"
                 required 
                 placeholder="Aircraft"
                 value={aircraft}
                 onChange={(event)=> setAircraft(event.target.value)}
                 />
                 <input 
+                className="fivetop-row"
                 required 
                 placeholder="Equipment"
                 value={equipment}
                 onChange={(event)=> setEquipment(event.target.value)}
                 />
+                </div>
+                <div class="container text-center">
                 <input 
+                className="onemid-row"
                 required 
                 type="number"
                 placeholder="Altitude"
@@ -78,6 +89,7 @@ function SkydiveForm(props) {
                 />
                 <input 
                 required 
+                className="twomid-row"
                 type="number"
                 placeholder="Freefall/Seconds"
                 value={freefall}
@@ -85,20 +97,27 @@ function SkydiveForm(props) {
                 />
                 <input 
                 required 
+                className="threemid-row"
                 type="number"
                 placeholder="Total Freefall/Seconds"
                 value={totalFreefall}
                 onChange={(event)=> setTotalFreefall(event.target.value)}
                 />
+                </div>
+                <div class="container text-center">
                 <input 
+                className="bot-row"
                 required 
                 placeholder="Description"
                 value={description}
                 onChange={(event)=> setDescription(event.target.value)}
                 />
+                </div>
+                <div class="container text-center">
                 <button type="submit">
                     Add Log
                 </button>
+                </div>
             </form>
         </div>
     )

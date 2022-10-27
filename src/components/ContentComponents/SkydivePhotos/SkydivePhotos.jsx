@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
 import { useHistory, useParams } from 'react-router-dom';
-import './SkydivePhotos.css'
+import './SkydivePhotos.css';
 import ReactPlayer from 'react-player';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
