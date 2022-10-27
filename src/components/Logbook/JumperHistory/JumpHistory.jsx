@@ -27,15 +27,15 @@ function JumpHistory(){
             logbook.user_id === userId && 
                         <ul class="container text-center">
                             
-                        <li><div>Jump Number: {logbook.jump_number}</div> 
-                        <div>Date: {logbook.date}</div>
-                       <div>Location: {logbook.place}</div>
-                       <div>Aircraft: {logbook.aircraft}</div>
-                        <div>Equipment: {logbook.equipment}</div>
-                        <div>Altitude: {logbook.altitude}</div>
-                        <div>Freefall: {logbook.freefall}</div>
-                        <div> Total Freefall: {logbook.total_freefall}</div>
-                        <div>Description: {logbook.description}</div></li>        
+                        <li><div>Jump Number: <div class="badge bg-primary text-wrap">{logbook.jump_number}</div></div> 
+                        <div>Date: <div class="badge bg-primary text-wrap">{logbook.date}</div></div>
+                       <div>Location: <div class="badge bg-primary text-wrap">{logbook.place}</div></div>
+                       <div>Aircraft: <div class="badge bg-primary text-wrap">{logbook.aircraft}</div></div>
+                        <div>Equipment: <div class="badge bg-primary text-wrap">{logbook.equipment}</div></div>
+                        <div>Altitude: <div class="badge bg-primary text-wrap">{logbook.altitude}</div></div>
+                        <div>Freefall: <div class="badge bg-primary text-wrap">{logbook.freefall}</div></div>
+                        <div> Total Freefall: <div class="badge bg-primary text-wrap">{logbook.total_freefall}</div></div>
+                        <div>Description: <div class="badge bg-primary text-wrap">{logbook.description}</div></div></li>        
             <button onClick={() => history.push(`details/edit/${logbook.id}`)}> Edit</button>
             <button onClick={() => history.push(`details/${logbook.id}`)}> View Details 2</button>
             </ul>

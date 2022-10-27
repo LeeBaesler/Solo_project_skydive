@@ -18,7 +18,7 @@ function JumpHistoryDetailsWithParams() {
 
    return (
     <>
-    <h1>Jump History Details (with params)</h1>
+    <h1>Jump History Details</h1>
     <table>
         <tbody>
             <tr>
