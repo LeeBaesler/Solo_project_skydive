@@ -36,8 +36,11 @@ function JumpHistory(){
                         <div>Freefall: <div class="badge bg-primary text-wrap">{logbook.freefall}</div></div>
                         <div> Total Freefall: <div class="badge bg-primary text-wrap">{logbook.total_freefall}</div></div>
                         <div>Description: <div class="badge bg-primary text-wrap">{logbook.description}</div></div></li>        
-            <button class="btn btn-primary" onClick={() => history.push(`details/edit/${logbook.id}`)}> Edit</button>
-            <button class="btn btn-primary" onClick={() => history.push(`details/${logbook.id}`)}> View Details 2</button>
+            <div>
+            <button class="btn btn-info" onClick={() => history.push(`details/edit/${logbook.id}`)}> Edit</button> </div>
+            <div>
+            <button class="btn btn-info" onClick={() => history.push(`details/${logbook.id}`)}>Details</button>
+            </div>
             </ul>
             
             )}
