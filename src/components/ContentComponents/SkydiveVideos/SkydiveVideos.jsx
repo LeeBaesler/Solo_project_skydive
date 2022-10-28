@@ -44,7 +44,7 @@ return (
             value={videoDescription}
             onChange={(event) => setVideoDescription(event.target.value)}
             />
-            <button type='submit'>
+            <button class="btn btn-primary"  type='submit'>
                 Add Video
             </button>
         </form>
@@ -59,7 +59,7 @@ return (
                     <ReactPlayer className="video" width='600px' height='600px' controls url={videos.video_url}/> 
                        <div class = "card-body">
                        <p class="card-text"> {videos.video_description} </p>
-                    <button type="button" class="btn btn-dark" onClick={() => history.push(`/skydive/video/edit/${videos.id}`)}> Edit</button>
+                    <button class="btn btn-primary" type="button" onClick={() => history.push(`/skydive/video/edit/${videos.id}`)}> Edit</button>
                 </div>
                 </div>
                 </tr>
