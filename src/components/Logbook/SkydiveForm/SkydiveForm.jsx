@@ -34,7 +34,7 @@ function SkydiveForm(props) {
     }
 
     return (
-        <div>
+        <div className="fp">
             <h2 className ="header">
                 Enter Recent Jump 
             </h2>
@@ -105,16 +105,18 @@ function SkydiveForm(props) {
                 />
                 </div>
                 <div class="container text-center">
-                <input 
+
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="6"
                 className="bot-row"
                 required 
                 placeholder="Description"
                 value={description}
                 onChange={(event)=> setDescription(event.target.value)}
-                />
+               />
+           
                 </div>
                 <div class="container text-center">
-                <button type="submit">
+                <button type="submit" class="btn btn-primary">
                     Add Log
                 </button>
                 </div>

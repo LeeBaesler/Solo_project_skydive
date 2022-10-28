@@ -1,39 +1,81 @@
+
 .header{
     text-align: center;
+    color: #001b29;
 }
 
 .onetop-row{
     text-align: center;
+    border-style: solid;
+    border-color: #30638e;
+    color: #30638e
 }
 
 .twotop-row{
     text-align: center;
+    border-style: solid;
+    border-color: #30638e;
+    color: #30638e;
 }
 
 .threetop-row{
     text-align: center;
+    border-style: solid;
+    border-color: #30638e;
+    color: #30638e;
 }
 
 .fourtop-row{
     text-align: center;
+    border-style: solid;
+    border-color: #30638e;
+    color: #30638e;
 }
 
 .fivetop-row {
     text-align: center;
+    border-style: solid;
+    border-color: #30638e;
+    color: #30638e;
 }
 
 .onemid-row{
     text-align: center;
+    border-style: solid;
+    border-color: #30638e;
+    color: #30638e;
 }
 
 .twomid-row{
     text-align: center;
+    border-style: solid;
+    border-color: #30638e;
+    color: #30638e;
 }
 
 .threemid-row{
     text-align: center;
+    border-style: solid;
+    border-color: #30638e;
+    color: #30638e;
 }
 
 .bot-row{
     text-align: center;
+    border-style: solid;
+    border-color: #30638e;
+    color: #30638e;
+}
+
+.button{
+    text-align: center;
+    border-style: solid;
+    border-color: #30638e;
+    color: #30638e;
+}
+
+.fp{
+   background-size: cover;
+   background-attachment: fixed;
+    background-image: url(https://images.unsplash.com/photo-1513002749550-c59d786b8e6c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80) ;
 }

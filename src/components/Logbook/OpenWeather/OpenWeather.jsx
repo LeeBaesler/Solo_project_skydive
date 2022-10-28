@@ -18,10 +18,12 @@ function OpenWeather() {
     }
   
   return (
+    
     <section className="apiData">
         <div class="container text-center">
         <div class=" border border-dark">
         <div className="search">
+          <h1>Weather Conditions</h1>
           <input 
           value={location}
           onChange={event => setLocation(event.target.value)}
