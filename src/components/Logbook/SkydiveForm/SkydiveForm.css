@@ -1,39 +1,59 @@
 .header{
     text-align: center;
+    color: #30638e
 }
 
 .onetop-row{
     text-align: center;
+    border-style: solid;
+    border-color: #30638e;
+    color: #30638e
 }
 
 .twotop-row{
     text-align: center;
+    border-style: solid;
+    border-color: #30638e;
 }
 
 .threetop-row{
     text-align: center;
+    border-style: solid;
+    border-color: #30638e;
 }
 
 .fourtop-row{
     text-align: center;
+    border-style: solid;
+    border-color: #30638e;
 }
 
 .fivetop-row {
     text-align: center;
+    border-style: solid;
+    border-color: #30638e;
 }
 
 .onemid-row{
     text-align: center;
+    border-style: solid;
+    border-color: #30638e;
 }
 
 .twomid-row{
     text-align: center;
+    border-style: solid;
+    border-color: #30638e;
 }
 
 .threemid-row{
     text-align: center;
+    border-style: solid;
+    border-color: #30638e;
 }
 
 .bot-row{
     text-align: center;
+    border-style: solid;
+    border-color: #30638e;
 }

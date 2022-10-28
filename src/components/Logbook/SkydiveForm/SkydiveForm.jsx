@@ -114,7 +114,7 @@ function SkydiveForm(props) {
                 />
                 </div>
                 <div class="container text-center">
-                <button type="submit">
+                <button type="submit" class="btn btn-primary">
                     Add Log
                 </button>
                 </div>
