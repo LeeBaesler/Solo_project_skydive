@@ -34,7 +34,7 @@ function SkydiveForm(props) {
     }
 
     return (
-        <div>
+        <div className="fp">
             <h2 className ="header">
                 Enter Recent Jump 
             </h2>
