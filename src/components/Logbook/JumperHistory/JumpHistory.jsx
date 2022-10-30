@@ -27,15 +27,32 @@ function JumpHistory(){
             logbook.user_id === userId && 
                         <ul class="container text-center">
                             <p>
-                        <div>Jump Number: <div class="badge bg-primary text-wrap"><p class="fs-3">{logbook.jump_number}</p></div></div></p>
-                        <p><div>Date: <div class="badge bg-primary text-wrap"><p class="fs-6">{new Date(logbook.date).toDateString()}</p></div></div></p>
-                       <p><div>Location: <div class="badge bg-primary text-wrap"><p class="fs-3">{logbook.place}</p></div></div></p>
-                       <p><div>Aircraft: <div class="badge bg-primary text-wrap"><p class="fs-3">{logbook.aircraft}</p></div></div></p>
-                       <p><div>Equipment: <div class="badge bg-primary text-wrap"><p class="fs-3">{logbook.equipment}</p></div></div></p>
-                       <p><div>Altitude: <div class="badge bg-primary text-wrap"><p class="fs-3">{logbook.altitude}</p></div></div></p>
-                       <p><div>Freefall: <div class="badge bg-primary text-wrap"><p class="fs-3">{logbook.freefall}</p></div></div></p>
-                       <p><div> Total Freefall: <div class="badge bg-primary text-wrap"><p class="fs-3">{logbook.total_freefall}</p></div></div></p>
-                        <p><div>Description: <div class="badge bg-primary text-wrap"><p class="fs-3">{logbook.description}</p></div></div></p>       
+                        <div>
+                            <div class="row"><div class="row-sm-3"><div class="card">Jump Number: <div class="badge bg-primary text-wrap"><p class="fs-3">{logbook.jump_number}</p></div></div></div></div></div></p>
+                        <p>
+                            <div>
+                            <div class ="row" class="row-sm-3"><div class="card">Date: <div class="badge bg-primary text-wrap"><p class="fs-6">{new Date(logbook.date).toDateString()}</p></div></div></div></div></p>
+                       <p>
+                        <div>
+                        <div class ="row" class="row-sm-3"><div class="card">Location: <div class="badge bg-primary text-wrap"><p class="fs-3">{logbook.place}</p></div></div></div></div></p>
+                       <p>
+                        <div>
+                        <div class ="row" class="row-sm-3"><div class="card">Aircraft: <div class="badge bg-primary text-wrap"><p class="fs-3">{logbook.aircraft}</p></div></div></div></div></p>
+                       <p>
+                        <div>
+                        <div class ="row" class="row-sm-3"><div class="card">Equipment: <div class="badge bg-primary text-wrap"><p class="fs-3">{logbook.equipment}</p></div></div></div></div></p>
+                       <p>
+                        <div>
+                        <div class ="row" class="row-sm-3"><div class="card">Altitude: <div class="badge bg-primary text-wrap"><p class="fs-3">{logbook.altitude}</p></div></div></div></div></p>
+                       <p>
+                        <div>
+                        <div class ="row" class="row-sm-3"><div class="card">Freefall: <div class="badge bg-primary text-wrap"><p class="fs-3">{logbook.freefall}</p></div></div></div></div></p>
+                       <p>
+                        <div> 
+                        <div class ="row" class="row-sm-3"><div class="card">Total Freefall: <div class="badge bg-primary text-wrap"><p class="fs-3">{logbook.total_freefall}</p></div></div></div></div></p>
+                        <p>
+                            <div>
+                            <div class ="row" class="row-sm-3"><div class="card">Description: <div class="badge bg-primary text-wrap"><p class="fs-3">{logbook.description}</p></div></div></div></div></p>       
             
             <p><button class="btn btn-info" onClick={() => history.push(`details/edit/${logbook.id}`)}> <span class="badge badge-light">Edit</span></button></p>
             
