@@ -55,6 +55,7 @@ return (
        <table>
             <tbody>
                 <tr>
+                <span class="border border-primary">
                     <div class="card">
                     <ReactPlayer className="video" width='600px' height='600px' controls url={videos.video_url}/> 
                        <div class = "card-body">
@@ -62,6 +63,7 @@ return (
                     <button class="btn btn-primary" type="button" onClick={() => history.push(`/skydive/video/edit/${videos.id}`)}> Edit</button>
                 </div>
                 </div>
+                </span>
                 </tr>
             </tbody>
        </table>

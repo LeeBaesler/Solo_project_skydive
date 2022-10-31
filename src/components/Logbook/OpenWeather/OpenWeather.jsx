@@ -40,7 +40,7 @@ function OpenWeather() {
               </div>
               <div className="temp">
                 <p>Current Temperature</p>
-                {data.main ? <h1>{data.main.temp} °F</h1> : null}  
+                {data.main ? <h1>{data.main.temp} °F</h1> : null} 
             </div>
             <div className="description">
               <p>Description</p>

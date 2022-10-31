@@ -74,6 +74,7 @@ function SkydivePhotos(props){
                 <table>
                     <tbody>
                         <tr>
+                            <span class="border border-primary">
                         <div class="card">
                             <img src={photos.image_url} className="image" class="card-img-top" />
                         <div class="card-body">
@@ -81,6 +82,7 @@ function SkydivePhotos(props){
                             <button class="btn btn-primary" onClick={() => history.push(`/skydive/photo/edit/${photos.id}`)}> Edit</button>
                             </div>
                             </div>
+                            </span>
                         </tr>
                     </tbody>
                 </table>
