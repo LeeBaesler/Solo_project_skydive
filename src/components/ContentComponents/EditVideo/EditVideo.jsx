@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import ReactPlayer from 'react-player';
 import { useHistory, useParams } from 'react-router-dom';
 
-function EditVideo(){
+function EditVideo() {
     const dispatch = useDispatch();
     const history = useHistory();
     const videos = useSelector(store => store.videos);
@@ -17,9 +17,9 @@ function EditVideo(){
     let video = videos.find(video => video.id === Number(videosid));
 
 
-    const [ videoUrl, setVideoUrl] = useState ('');
-    const [ videoDescription, setVideoDescription] = useState('');
-    
+    const [videoUrl, setVideoUrl] = useState('');
+    const [videoDescription, setVideoDescription] = useState('');
+
     const editVideos = {
         videosid: Number(videosid),
         video_url: videoUrl,
@@ -36,21 +36,21 @@ function EditVideo(){
 
     useEffect(() => {
         //find the logbook in redux using the parameter id
-       if(video !== undefined){ 
-        setVideoUrl(video.video_url);
-        setVideoDescription(video.video_description);
-        console.log('video', video);
-    }
+        if (video !== undefined) {
+            setVideoUrl(video.video_url);
+            setVideoDescription(video.video_description);
+            console.log('video', video);
+        }
     }, [video]);
 
-    return(
-    <section>
-        
-        <h1>Delete Video</h1>
-        <ReactPlayer url={video.video_url} />
-        <h1> {video.video_description}</h1>
-        <button onClick={() => deleteVideos()}> Delete </button>
-    
+    return (
+        <section>
+
+            <h1>Delete Video</h1>
+            <ReactPlayer url={video.video_url} />
+            <h1> {video.video_description}</h1>
+            <button onClick={() => deleteVideos()}> Delete </button>
+
         </section>
     )
 

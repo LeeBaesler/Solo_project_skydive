@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
 import { useHistory, useParams } from 'react-router-dom';
 
-function EditPhotos(){
+function EditPhotos() {
     const dispatch = useDispatch();
     const history = useHistory();
     const photos = useSelector(store => store.photos);
@@ -42,22 +42,22 @@ function EditPhotos(){
 
     useEffect(() => {
         //find the logbook in redux using the parameter id
-       if(photo !== undefined){ 
-        setImageUrl(photo.image_url);
-        setImageDescription(photo.image_description);
-    }
+        if (photo !== undefined) {
+            setImageUrl(photo.image_url);
+            setImageDescription(photo.image_description);
+        }
     }, [photo]);
 
-    return(
+    return (
         <section>
             <h1>Delete Photos</h1>
             <div>
                 <img src={photo.image_url} />
-            <button onClick={() => deletePhotos()}> Delete </button>
+                <button onClick={() => deletePhotos()}> Delete </button>
             </div>
-            </section>
-        )
-    
+        </section>
+    )
+
 
 }
 

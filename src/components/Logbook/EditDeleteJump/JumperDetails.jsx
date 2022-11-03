@@ -15,7 +15,7 @@ function LogbookDetails() {
     let logbookid = params.logbookid;
 
     let book = logbook.find(book => book.id === Number(logbookid));
-    
+
     // const [id, setId] = useState('');
     const [jumpNumber, setJumpNumber] = useState('');
     const [date, setDate] = useState('');
@@ -26,8 +26,8 @@ function LogbookDetails() {
     const [freefall, setFreefall] = useState('');
     const [totalFreefall, setTotalFreefall] = useState('');
     const [description, setDescription] = useState('');
-    
-    
+
+
     const editLog = {
         logbookid: Number(logbookid),
         jump_number: jumpNumber,
@@ -40,7 +40,7 @@ function LogbookDetails() {
         total_freefall: totalFreefall,
         description: description,
     }
-    
+
     const editLogbook = () => {
         dispatch({
             type: 'EDIT_LOG',
@@ -48,7 +48,7 @@ function LogbookDetails() {
         })
         history.push('/info');
     }
-    
+
     const deleteLogbook = () => {
         dispatch({
             type: 'DELETE_LOG',
@@ -56,33 +56,33 @@ function LogbookDetails() {
         })
         history.push('/info');
     }
-    
+
     console.log('logbook:', logbook)
-    
+
     useEffect(() => {
         //find the logbook in redux using the parameter id
-       if(book !== undefined){ 
-        setJumpNumber(book.jump_number);
-        setDate(book.date);
-        setPlace(book.place);
-        setAircraft(book.aircraft);
-        setEquipment(book.equipment);
-        setAltitude(book.altitude);
-        setFreefall(book.freefall);
-        setTotalFreefall(book.total_freefall);
-        setDescription(book.description);
-        
-        console.log('book', book);
-    }
+        if (book !== undefined) {
+            setJumpNumber(book.jump_number);
+            setDate(book.date);
+            setPlace(book.place);
+            setAircraft(book.aircraft);
+            setEquipment(book.equipment);
+            setAltitude(book.altitude);
+            setFreefall(book.freefall);
+            setTotalFreefall(book.total_freefall);
+            setDescription(book.description);
+
+            console.log('book', book);
+        }
         // if the  book is found update the local state with the books values
         //
     }, [book]); //only run this when book value changes
-    
+
 
     if (book === undefined) {
         return <h2> Sorry, no edit available for jump you are looking for</h2>
     }
-    
+
     return (
         <>
             <h1>Jump History</h1>
