@@ -1,11 +1,13 @@
 
 Skydive_Logbook
 
-1. The Skydive_Logbook gives skydivers a place to log their jumps and upload their content (photos and videos). Skydive_Logbook can be used in tandem with the physical logbook, but removes some of the stress skydivers feel about losing their logbooks. 
-  
-2.  Skydive_Logbook also uses OpenWeatherMap API to render real-time weather information the client can use if they are considering a few jumps that day. 
+1. The Skydive_Logbook gives skydivers a place to log their jumps and upload their content (photos and videos). 
 
-3.  Skydive_Logbook also uses frameworks that allow users to save and render photos and videos that can be viewed and played on different devices (images/videos don't need to be saved locally to be viewed).
+2.  Skydive_Logbook can be used in tandem with the physical logbook, but removes some of the stress skydivers feel about losing their logbooks. 
+  
+3.  Skydive_Logbook also uses OpenWeatherMap API to render real-time weather information the client can use if they are considering a few jumps that day. 
+
+4.  Skydive_Logbook also uses frameworks that allow users to save and render photos and videos that can be viewed and played on different devices (images/videos don't need to be saved locally to be viewed).
 
 Getting Started
 
