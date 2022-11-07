@@ -20,7 +20,7 @@ function LandingPage() {
       <div className="grid">
         <div className="grid-col grid-col_8">
           <p>
-            Skydive Logbook is an application built for skydivers as a tool to digitally save their logbook information, as well as upload
+            Skydive Logbook is an application built for skydivers. It serves as a tool to digitally save skydive logbook information and upload
             photo and video content.
           </p>
 
