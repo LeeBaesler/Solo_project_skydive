@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
+import SigPad from "../../SigCapture/SigCapture";
 import './SkydiveForm.css';
 
 
@@ -106,6 +107,7 @@ function SkydiveForm(props) {
                         onChange={(event) => setTotalFreefall(event.target.value)}
                     />
                 </div>
+                <SigPad />
                 <div class="container text-center">
 
                     <textarea class="form-control" id="exampleFormControlTextarea1" rows="6"
@@ -115,7 +117,6 @@ function SkydiveForm(props) {
                         value={description}
                         onChange={(event) => setDescription(event.target.value)}
                     />
-
                 </div>
                 <div class="container text-center">
                     <button type="submit" class="btn btn-primary">
@@ -124,7 +125,9 @@ function SkydiveForm(props) {
                 </div>
             </form>
         </div>
+        
     )
 }
+
 
 export default SkydiveForm
